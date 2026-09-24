@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.pipeworx-io/cfpb",
   "title": "Cfpb",
-  "description": "CFPB MCP \u2014 Consumer Financial Protection Bureau complaint database (free, no auth)",
-  "version": "0.1.0",
+  "description": "CFPB MCP — Consumer Financial Protection Bureau complaint database (free, no auth)",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/cfpb",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-cfpb",
