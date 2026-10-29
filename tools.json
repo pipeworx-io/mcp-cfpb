@@ -1,0 +1,117 @@
+[
+  {
+    "name": "cfpb_search_complaints",
+    "description": "Search consumer complaints by keyword, company, product, or date range. Returns complaint narratives, company responses, and resolution status.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search term (e.g., \"overdraft fees\", \"denied claim\"). Optional if other filters provided."
+        },
+        "company": {
+          "type": "string",
+          "description": "Company name to filter by (e.g., \"BANK OF AMERICA\", \"WELLS FARGO\")"
+        },
+        "product": {
+          "type": "string",
+          "description": "Product category (e.g., \"Credit card\", \"Mortgage\", \"Student loan\", \"Vehicle loan or lease\", \"Checking or savings account\", \"Credit reporting\", \"Debt collection\")"
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Start date in YYYY-MM-DD format"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date in YYYY-MM-DD format"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results (1-100, default 25)"
+        }
+      }
+    }
+  },
+  {
+    "name": "cfpb_company_complaints",
+    "description": "Get recent complaints against a specific company (e.g., 'Wells Fargo', 'Citibank'). Everyday names are resolved to CFPB's exact registered spelling automatically (\"Wells Fargo\" -> \"WELLS FARGO & COMPANY\"), and the response reports which name was actually queried. Returns narratives, company responses, and resolution details sorted newest first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string",
+          "description": "Company name (e.g., \"BANK OF AMERICA\", \"CITIBANK\", \"JPMORGAN CHASE\")"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results (1-100, default 25)"
+        }
+      },
+      "required": [
+        "company"
+      ]
+    }
+  },
+  {
+    "name": "cfpb_get_complaint",
+    "description": "Retrieve full details for a specific complaint by ID. Returns narrative, company response, resolution status, and metadata.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "complaint_id": {
+          "type": "string",
+          "description": "CFPB complaint ID number"
+        }
+      },
+      "required": [
+        "complaint_id"
+      ]
+    }
+  },
+  {
+    "name": "cfpb_top_companies",
+    "description": "Find companies with the most complaints in a date range. Returns ranked list with company names and complaint counts.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "description": "Start date in YYYY-MM-DD format"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date in YYYY-MM-DD format"
+        },
+        "product": {
+          "type": "string",
+          "description": "Optional product filter (e.g., \"Mortgage\", \"Credit card\")"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of top companies to return (default 10)"
+        }
+      }
+    }
+  },
+  {
+    "name": "cfpb_product_breakdown",
+    "description": "Get complaint counts by product category (e.g., 'Credit Card', 'Mortgage'). Filter by company or date range.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string",
+          "description": "Optional company name to filter by"
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Start date in YYYY-MM-DD format"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date in YYYY-MM-DD format"
+        }
+      }
+    }
+  }
+]
