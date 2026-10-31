@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-cfpb",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CFPB MCP — Consumer Financial Protection Bureau complaint database (free, no auth)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "cfpb",
     "gatewaySlug": "cfpb",
-    "sourceHash": "v1-ff7827417ca09183f1f0868361bd751760ea11c3bb708b4067b237d44cb6eb3a",
-    "sourceCommit": "4277282d72f9bf55e548b3799aaf737baf22152f"
+    "sourceHash": "v1-a8955c2eb5aa546e87cb35b2b5e09f8b73ed89935eff39038adde40231e99a98",
+    "sourceCommit": "547a3983b42dacf4389ca474860b0a1dee8e6053"
   }
 }
